@@ -1,20 +1,26 @@
-function checkspeed(carspeed){
-    constspeedlimit =70;
-    constdemeritpoint =5;
-constpointsThreshold=12;
-
-}
-if(carspeed<speedlimit){
-    return"ok";
-}else{
-const excessSpeed=carspeed-speedlimit;
-constdemeritpoints=Mathfloor(excessspeed/demeritpoint);
-if(demeritpoints>pointsThreshold){
-    return"License suspended";
-}else{
-    return"points"+demeritpoints;
-}
-}
-varcarspeed=parseint("100");//imput car speed
-cgeckspeed(carspeed)
-console.log(checkspeed)(carspeed)
+function checkSpeed(speedArg) {
+    const speed = Number(speedArg);
+    // Check if the speed is valid
+    if (isNaN(speed) || speed < 0) {
+      return "Invalid input. Please enter a positive number.";
+    } else {
+      // Calculate the number of demerit points
+      const speedLimit = 70;
+      const kmPerDemeritPoint = 5;
+      const excessSpeed = speed - speedLimit;
+      let demeritPoints = 0;
+  
+      if (excessSpeed > 0) {
+        demeritPoints = Math.floor(excessSpeed / kmPerDemeritPoint);
+      }
+  
+      // Check if the license is suspended
+      if (demeritPoints > 12) {
+        return "License suspended.";
+      } else {
+        return `Points: ${demeritPoints}`;
+      }
+    }
+  }
+  const points =checkSpeed(120)
+  console.log(points)

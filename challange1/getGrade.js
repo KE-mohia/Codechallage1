@@ -8,10 +8,10 @@ function calculateGrade(marks){
             return "B"
 
         }
-        else if (master >= 50 && marks <=59){
+        else if (marks >= 50 && marks <=59){
             return "c"
         } 
-        else if (mrks >= 40 && marks <=49){
+        else if (marks >= 40 && marks <=49){
             return "D"
         }
         else {return "E"}
@@ -19,6 +19,6 @@ function calculateGrade(marks){
         return "invalid marks"
     }
 }
-let marks = perseint(60)//ninput youre marks here
-let grade = calculateGrade(master)
-console.log(grid)
+let marks = parseInt(60)//ninput youre marks here
+let grade = calculateGrade(marks)
+console.log(grade)
